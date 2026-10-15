@@ -8,8 +8,8 @@
 <body class="container mt-5">
     <h1>Editar Materia</h1>
     <a href="{{ route('materia.index') }}" class="btn btn-secondary mb-3">Volver</a>
-
-    <form action="{{ route('materia.update', $materia->id) }}" method="POST">
+    
+<form action="{{ route('materia.update', ['materia' => $materia->id]) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-3">

@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MateriaController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\MateriaController;
-
-Route::resource('materia', MateriaController::class);
+Route::resource('materia', MateriaController::class)->parameters([
+    'materia' => 'materia'
+]);
